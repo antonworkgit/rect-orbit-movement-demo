@@ -98,6 +98,7 @@ InitTestScene*.unity*
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
 Assets/InputActions.inputactions
+Assets/Scripts/Input/InputActions.cs
 /ProjectSettings
 /Packages
 /Assets/Plugins

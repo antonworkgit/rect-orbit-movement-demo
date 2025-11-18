@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e599c02bb1121424e9179d7735e50fc4, type: 3}
+  m_Name: DemoSetting
+  m_EditorClassIdentifier: 
+  PlayerPrefab: {fileID: 1511355593770422977, guid: fe7bd2fc0f017db4c8d2bc4136231b35, type: 3}
+  PlatformPrefab: {fileID: 3992281956650927079, guid: 79470acacea32ff41b7aabeef8667485, type: 3}
+  PlayerInitialPosition: 0
+  PlayerMovementSettings:
+    BaseOffset: 0.15
+    MoveSpeed: 7
+    JumpCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.0028544532
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.2575357
+        value: 0.99024665
+        inSlope: 0.18859342
+        outSlope: 0.18859342
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.5218751
+      - serializedVersion: 3
+        time: 0.5086662
+        value: 1.021169
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.9965397
+        value: 0.0009515328
+        inSlope: -5.3985357
+        outSlope: -5.3985357
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.13653257
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    JumpHeight: 1
+    JumpDuration: 0.4
+  PathSettings:
+    CornerRaduis: 0.25
+    CornerPoints: 8
+  PlatformData:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 4
+    height: 2

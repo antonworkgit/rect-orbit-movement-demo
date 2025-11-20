@@ -15,6 +15,8 @@ namespace Scripts.Utility
         // Corners only
         public static Vector2[] GetRoundRectPoints(Vector2 position, Vector2 size, float cornerRadius, int cornerPoints)
         {
+            if (cornerPoints < 2) throw new System.ArgumentOutOfRangeException(nameof(cornerPoints));
+
             int pointsCount = Arcs * cornerPoints;
             Vector2[] points = new Vector2[pointsCount];
 

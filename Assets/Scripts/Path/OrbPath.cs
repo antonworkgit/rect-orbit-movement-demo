@@ -20,7 +20,7 @@ namespace Scripts.Path
             int cornerPoints = settings.CornerPoints;
 
             if (cornerRadius < 0) throw new System.ArgumentOutOfRangeException(nameof(cornerRadius));
-            if (cornerPoints < 1) throw new System.ArgumentOutOfRangeException(nameof(cornerPoints));
+            if (cornerPoints < 2) throw new System.ArgumentOutOfRangeException(nameof(cornerPoints));
 
             Vector2 position = rect.position;
             Vector2 size = rect.size;

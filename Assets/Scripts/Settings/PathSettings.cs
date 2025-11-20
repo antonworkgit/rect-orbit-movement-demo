@@ -5,7 +5,7 @@ namespace Scripts.Settings
     [Serializable]
     public sealed class PathSettings
     {
-        public float CornerRaduis;
+        public float CornerRadius;
         public int CornerPoints;
     }
 }

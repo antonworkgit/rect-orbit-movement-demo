@@ -16,20 +16,20 @@ namespace Scripts.Path
 
         public OrbPath(Rect rect, PathSettings settings)
         {
-            float cornerRaduis = settings.CornerRaduis;
+            float cornerRadius = settings.CornerRadius;
             int cornerPoints = settings.CornerPoints;
 
-            if (cornerRaduis < 0) throw new System.ArgumentOutOfRangeException(nameof(cornerRaduis));
+            if (cornerRadius < 0) throw new System.ArgumentOutOfRangeException(nameof(cornerRadius));
             if (cornerPoints < 1) throw new System.ArgumentOutOfRangeException(nameof(cornerPoints));
 
             Vector2 position = rect.position;
             Vector2 size = rect.size;
 
-            Vector2[] points = RoundedRectUtility.GetRoundRectPoints(position, size, cornerRaduis, cornerPoints);
+            Vector2[] points = RoundedRectUtility.GetRoundRectPoints(position, size, cornerRadius, cornerPoints);
             _spline = new Spline(points.Length + 1, closed: true);
 
             // Extra point that will become 0t of a spline for easy evaluation
-            Vector2 startPoint = position + new Vector2(0f, size.y * 0.5f + settings.CornerRaduis);
+            Vector2 startPoint = position + new Vector2(0f, size.y * 0.5f + settings.CornerRadius);
             AddPoint(startPoint);
 
             foreach (Vector2 point in points)

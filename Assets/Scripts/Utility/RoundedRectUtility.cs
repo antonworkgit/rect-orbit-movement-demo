@@ -27,45 +27,49 @@ namespace Scripts.Utility
             Vector2 br = position + new Vector2(hx, -hy);
             Vector2 bl = position + new Vector2(-hx, -hy);
 
-            // Reverse t for lerp
-            float inv = 1f / (cornerPoints - 1);
+            float step = 1f / (cornerPoints - 1);
 
-            // Clockwise from top right corner
+            // Top-right (π/2 - 0)
             for (int i = 0; i < cornerPoints; i++)
             {
-                float angle = Mathf.Lerp(Mathf.PI / 2f, 0f, inv * i);
+                float angle = Mathf.Lerp(Mathf.PI / 2f, 0f, step * i);
 
-                points[i] = new Vector2(
-                    tr.x + cornerRadius * Mathf.Cos(angle),
-                    tr.y + cornerRadius * Mathf.Sin(angle)
+                points[i] = tr + new Vector2(
+                    cornerRadius * Mathf.Cos(angle),
+                    cornerRadius * Mathf.Sin(angle)
                 );
             }
 
+            // Bottom-right (0 - −π/2)
             for (int i = 0; i < cornerPoints; i++)
             {
-                float angle = Mathf.Lerp(0f, -Mathf.PI / 2f, inv * i);
+                float angle = Mathf.Lerp(0f, -Mathf.PI / 2f, step * i);
 
-                points[cornerPoints + i] = new Vector2(
-                    br.x + cornerRadius * Mathf.Cos(angle),
-                    br.y + cornerRadius * Mathf.Sin(angle)
+                points[cornerPoints + i] = br + new Vector2(
+                    cornerRadius * Mathf.Cos(angle),
+                    cornerRadius * Mathf.Sin(angle)
                 );
             }
 
+            // Bottom-left (−π/2 - −π)
             for (int i = 0; i < cornerPoints; i++)
             {
-                float angle = Mathf.Lerp(0f, -Mathf.PI / 2f, inv * i);
-                points[cornerPoints * 2 + i] = new Vector2(
-                    bl.x - cornerRadius * Mathf.Sin(Mathf.PI * 2 - angle),
-                    bl.y - cornerRadius * Mathf.Cos(Mathf.PI * 2 - angle)
+                float angle = Mathf.Lerp(-Mathf.PI / 2f, -Mathf.PI, step * i);
+
+                points[cornerPoints * 2 + i] = bl + new Vector2(
+                    cornerRadius * Mathf.Cos(angle),
+                    cornerRadius * Mathf.Sin(angle)
                 );
             }
 
+            // Top-left (π - π/2)
             for (int i = 0; i < cornerPoints; i++)
             {
-                float angle = Mathf.Lerp(-3f * Mathf.PI / 2f, -Mathf.PI, inv * i);
-                points[cornerPoints * 3 + i] = new Vector2(
-                    tl.x - cornerRadius * Mathf.Sin(angle),
-                    tl.y - cornerRadius * Mathf.Cos(angle)
+                float angle = Mathf.Lerp(Mathf.PI, Mathf.PI / 2f, step * i);
+
+                points[cornerPoints * 3 + i] = tl + new Vector2(
+                    cornerRadius * Mathf.Cos(angle),
+                    cornerRadius * Mathf.Sin(angle)
                 );
             }
 
